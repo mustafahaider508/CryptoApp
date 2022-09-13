@@ -1,0 +1,31 @@
+.banner {
+    background-image: url('https://t3.ftcdn.net/jpg/02/31/54/48/360_F_231544825_ElnBQbd6IgbIvP8p9xmZ3YkZhfvfWwna.jpg');
+    height: 80vh;
+    background-size: cover;
+    background-position: 50%;
+    
+  }
+.tagline{
+    display: flex;
+    height: 40%;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+.bannerContent{
+    
+    height: 400;
+    display: "flex";
+    flex-direction: "column";
+    padding-top: 25;
+    justify-content: "space-around";
+
+}
+.typography1{
+    padding-top: 70px;
+    color:white;
+    font-weight: "bold";
+    margin-bottom: 15;
+    font-family: "Montserrat";
+}
+
