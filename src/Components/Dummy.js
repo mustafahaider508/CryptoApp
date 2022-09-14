@@ -2,29 +2,44 @@ import React,{useEffect,useState} from 'react';
 import axios from "axios";
 function Dummy() {
 
-
+   const[apidata,setApidata] = useState([]);
     const [coin,setCoin] = useState([]);
 
+
     useEffect(() => {
-        const interval = setInterval(() => {
-            console.log('This will run after 10 seconds!');
          axios.get("https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false")
-         .then((res)=>{setCoin(res.data.filter(x => (x.symbol === "eth") || (x.symbol ==="bnb") || (x.symbol ==="matic")))});
-          }, 10000);
-          return () => clearInterval(interval);
+         .then((res)=>{setCoin(res.data.filter(x => (x.symbol === "eth") ||(x.symbol === "bnb") || (x.symbol === "matic")).map(i => {return  i.last_updated}))});
+    
+ console.log(coin)
+
         },[])
-console.log(coin);
+
+// useEffect(() => {
+//   const data =  coin.map(i => {return i.name })
+//   setApidata(data);
+
+
+// },[])
+  
+// console.log(apidata);
+
+
+
   return (
     <>
-   {
-       coin.map(i => {
+  
+    {coin.map(i => {
            return(
                <>
-               <p>{i.id}</p>
+               <p>{i.name}</p>
+               <p>{i.last_updated}</p>
+               <p>{i.current_price}</p>
+          
+
                </>
            )
        })
-   }
+      }
       
     </>
   )
