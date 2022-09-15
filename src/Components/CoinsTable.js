@@ -2,12 +2,9 @@ import React,{useEffect,useState} from 'react';
 import { Pagination } from '@mui/material';
 import {
   Container,
-  createTheme,
   TableCell,
   LinearProgress,
-  ThemeProvider,
   Typography,
-  TextField,
   TableBody,
   TableRow,
   TableHead,
@@ -16,7 +13,7 @@ import {
   Paper,
 } from "@mui/material";
 import axios from "axios";
-import { Link ,useNavigate} from 'react-router-dom';
+import { useNavigate} from 'react-router-dom';
 
 
 export function numberWithCommas(x) {
@@ -53,12 +50,6 @@ function CoinsTable() {
         >
           Cryptocurrency Prices by Market Cap
         </Typography>
-        {/* <TextField
-          label="Search For a Crypto Currency.."
-          variant="outlined"
-          style={{ marginBottom: 20, width: "100%" }}
-          onChange={(e) => setSearch(e.target.value)}
-        /> */}
               </Container>
 
               <Container maxWidth="lg">
@@ -67,8 +58,6 @@ function CoinsTable() {
           {loading ? (
             <LinearProgress style={{ backgroundColor: "gold" }} />
           ) : (
-            
-       
             <Table aria-label="simple table">
               <TableHead style={{ backgroundColor: "blue" }}>
                 <TableRow>
@@ -95,7 +84,6 @@ function CoinsTable() {
                     const profit = row.price_change_percentage_24h > 0;
                     return (
                         <>
-                     
                        
                       <TableRow
                      onClick={() => navigate(`/graph/${row.id}`)}

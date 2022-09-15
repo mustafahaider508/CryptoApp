@@ -7,8 +7,7 @@ export function numberWithCommas(x) {
   }
 
 const  AppexChart  = () =>{
-  
- const [options,setoption] = useState({
+  const [options,setoption] = useState({
         chart: {id: 'apexchart-example'},
         xaxis: {categories: []}})
 
