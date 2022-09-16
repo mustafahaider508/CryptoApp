@@ -14,7 +14,7 @@ function Homepage() {
             variant="h2"
            
           >
-            Crypto Hunter
+            Crypcreate
           </Typography>
           <Typography
             variant="subtitle2"

@@ -102,7 +102,7 @@ function CoinsTable() {
                             src={row?.image}
                             alt={row.name}
                             height="50"
-                            style={{ marginBottom: 10 }}
+                            style={{ marginBottom: 10,cursor:"pointer" }}
                           />
                           <div
                             style={{ display: "flex", flexDirection: "column" }}
